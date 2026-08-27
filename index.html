@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waigal Movers LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --black-soft: #111111;
+    --black-mid: #1a1a1a;
+    --black-light: #222222;
+    --gray-dark: #333333;
+    --gray-mid: #555555;
+    --gray-light: #888888;
+    --gray-pale: #cccccc;
+    --gray-100: #f0f0f0;
+    --gray-50: #f7f7f7;
+    --white: #ffffff;
+    --accent: #000000;
+    --accent-inv: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    height: 56px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .logo-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--gray-pale);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  nav a {
+    color: var(--gray-pale);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  nav a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+
+  .nav-cta {
+    background: var(--white) !important;
+    color: var(--black) !important;
+    font-weight: 700 !important;
+    padding: 8px 20px !important;
+    border-radius: 980px !important;
+    font-size: 14px !important;
+    transition: background 0.2s !important;
+    letter-spacing: -0.01em;
+    flex-shrink: 0;
+  }
+
+  .nav-cta:hover {
+    background: var(--gray-100) !important;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 92vh;
+    background: var(--black);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.35;
+    z-index: 0;
+  }
+
+  #hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-logo {
+    margin-top: 20px;
+    margin-bottom: -200px;
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-pale);
+    margin-bottom: 28px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: clamp(44px, 8vw, 82px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+  }
+
+  h1 em {
+    font-style: normal;
+    position: relative;
+  }
+
+  h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--white);
+    opacity: 0.35;
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    font-size: clamp(13px, 2vw, 17px);
+    font-weight: 600;
+    color: var(--gray-light);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 52px;
+  }
+
+  .hero-sub span {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--gray-dark);
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    color: var(--black);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 12px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 28px rgba(255,255,255,0.15);
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary:hover {
+    background: var(--gray-100);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 36px rgba(255,255,255,0.2);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 16px 36px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-2px);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--gray-dark);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(to bottom, var(--gray-dark), transparent);
+    animation: pulse 2s infinite;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--black);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 18px 24px;
+  }
+
+  .trust-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-pale);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .trust-item svg {
+    color: var(--gray-pale);
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  /* ── SERVICES ── */
+  #services {
+    padding: 110px 24px;
+    background: var(--white);
+  }
+
+  .section-label {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+    color: var(--black);
+    letter-spacing: -0.025em;
+    margin-bottom: 14px;
+  }
+
+  .section-desc {
+    text-align: center;
+    font-size: 16px;
+    color: var(--gray-mid);
+    max-width: 480px;
+    margin: 0 auto 72px;
+    line-height: 1.65;
+  }
+
+  .services-grid {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1.5px solid #e8e8e8;
+    border-radius: 20px;
+    padding: 42px 32px;
+    transition: border-color 0.2s, box-shadow 0.25s, transform 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--black);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .service-card:hover {
+    border-color: #bbb;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
+    transform: translateY(-5px);
+  }
+
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-icon {
+    width: 54px;
+    height: 54px;
+    background: var(--black);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .service-icon svg { color: var(--white); }
+
+  .service-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .service-card p {
+    font-size: 15px;
+    color: var(--gray-mid);
+    line-height: 1.65;
+  }
+
+  /* ── WHY US ── */
+  #why {
+    padding: 110px 24px;
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #why::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+  }
+
+  #why .section-title { color: var(--white); }
+  #why .section-label { color: var(--gray-light); }
+  #why .section-desc { color: var(--gray-pale); }
+
+  .why-grid {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .why-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 40px 28px;
+    text-align: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .why-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.16);
+  }
+
+  .why-num {
+    font-size: 46px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 10px;
+  }
+
+  .why-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .why-card p {
+    font-size: 14px;
+    color: var(--gray-pale);
+    line-height: 1.65;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    padding: 110px 24px;
+    background: var(--gray-50);
+  }
+
+  .contact-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 52px;
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    color: var(--black);
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+
+  .contact-info > p {
+    font-size: 15px;
+    color: var(--gray-mid);
+    line-height: 1.65;
+    margin-bottom: 36px;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding: 16px 20px;
+    background: var(--white);
+    border: 1.5px solid #e8e8e8;
+    border-radius: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-detail:hover {
+    border-color: #bbb;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  }
+
+  .contact-detail a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s;
+  }
+
+  .contact-detail a:hover { color: var(--gray-mid); }
+
+  .contact-detail-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--black);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-detail-icon svg { color: var(--white); }
+
+  .call-btn-large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 32px;
+    border-radius: 14px;
+    margin-top: 28px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    letter-spacing: 0.01em;
+  }
+
+  .call-btn-large:hover {
+    background: var(--black-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+  }
+
+  /* Contact form */
+  .contact-form {
+    background: var(--white);
+    border: 1.5px solid #e8e8e8;
+    border-radius: 22px;
+    padding: 40px 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  }
+
+  .contact-form h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 26px;
+    letter-spacing: -0.01em;
+  }
+
+  .form-group { margin-bottom: 18px; }
+
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gray-dark);
+    margin-bottom: 7px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--black);
+    background: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--black);
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 90px; }
+
+  .form-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .form-submit:hover {
+    background: var(--black-light);
+    transform: translateY(-1px);
+  }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .form-success svg { color: #22c55e; margin-bottom: 12px; }
+  .form-success h4 { font-size: 18px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+  .form-success p { font-size: 14px; color: var(--gray-mid); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    padding: 52px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-logo-wrap {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-logo-wrap img {
+    height: 60px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+
+  footer p {
+    font-size: 13px;
+    color: var(--gray-light);
+    line-height: 1.8;
+  }
+
+  footer a {
+    color: var(--gray-pale);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--white); }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: 22px 0 8px;
+  }
+
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--gray-pale);
+    transition: background 0.2s, color 0.2s, transform 0.15s, border-color 0.2s;
+  }
+
+  .social-icons a:hover {
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .social-icons svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ── MOBILE STICKY CTA ── */
+  .mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    padding: 12px 14px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    gap: 10px;
+  }
+
+  .mobile-cta a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .mobile-cta a:active { opacity: 0.8; }
+
+  .mobile-call { background: var(--white); color: var(--black); }
+  .mobile-quote { background: rgba(255,255,255,0.08); color: var(--white); border: 1px solid rgba(255,255,255,0.12); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50%       { opacity: 1; }
+  }
+
+  .animate { animation: fadeInUp 0.65s ease both; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.22s; }
+  .delay-3 { animation-delay: 0.36s; }
+  .delay-4 { animation-delay: 0.52s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .services-grid,
+    .why-grid,
+    .contact-wrapper { grid-template-columns: 1fr; }
+    .mobile-cta { display: flex; }
+    body { padding-bottom: 80px; }
+    .contact-form { padding: 28px 22px; }
+    #hero { min-height: 88vh; padding: 60px 24px; }
+    .hero-logo { max-width: 100%; margin-bottom: -80px; }
+
+    .header-inner { gap: 8px; padding: 0 14px; height: 64px; }
+    .logo-name { font-size: 16px; }
+    .logo-img { height: 44px; }
+    nav { gap: 0; }
+    nav a:not(.nav-cta) {
+      font-size: 12px;
+      padding: 6px 8px;
+    }
+    .nav-cta {
+      padding: 6px 14px !important;
+      font-size: 12px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .trust-inner { gap: 18px; }
+    .trust-item:nth-child(n+4) { display: none; }
+    h1 { font-size: 38px; }
+    .logo-text { display: none; }
+    nav a:not(.nav-cta) { padding: 6px 6px; font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <img class="logo-img" src="logo.png" alt="Waigal Movers Logo">
+      <div class="logo-text">
+        <span class="logo-name">Waigal Movers LLC</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+12674388854" class="nav-cta">📞 Call Now</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-wrapper">
+    <div class="hero-content">
+      <div class="hero-logo animate">
+        <img src="logo.png" alt="Waigal Movers">
+      </div>
+      <div class="hero-badge animate delay-1" style="display:none;"></div>
+      <h1 class="animate delay-2">Your Local<br>Movers.</h1>
+      <p class="hero-sub animate delay-3">Fast <span>•</span> Affordable <span>•</span> Reliable</p>
+      <div class="btn-group animate delay-4">
+        <a href="tel:+12674388854" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Get a Free Quote
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    scroll
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      Licensed & Insured
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      On-Time Guarantee
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      Transparent Pricing
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+      Locally Owned
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <p class="section-label">What We Do</p>
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-desc">Move-day help, handled by people who care. No drama, no surprises.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>House Moving</h3>
+      <p>Tight stairwells and finicky elevators don't slow us down. We've moved out of pretty much every apartment building in town.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      </div>
+      <h3>Loading & Unloading</h3>
+      <p>Already rented a truck or pod? We'll handle the lifting. You handle the driving.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+      </div>
+      <h3>Furniture Moving</h3>
+      <p>One sofa or your whole living room. Each piece gets wrapped and padded before it leaves the building.</p>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <p class="section-label">Why Waigal Movers</p>
+  <h2 class="section-title">Built on trust. Built on results.</h2>
+  <p class="section-desc" style="margin-bottom:60px;">We're your neighbors in Charlottesville.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">100%</div>
+      <h4>Customer Focus</h4>
+      <p>We don't leave until you're happy. That's the whole job.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">5★</div>
+      <h4>Careful Handling</h4>
+      <p>We treat every item like it's irreplaceable. Because to you, it might be.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">$0</div>
+      <h4>Hidden Fees</h4>
+      <p>The price we quote is the price you pay. No surprises!</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="section-label">Get in Touch</p>
+  <h2 class="section-title" style="margin-bottom:60px;">Ready to move?</h2>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <h2>Talk to us.<br>We'll handle<br>the rest.</h2>
+      <p>Call or send a quick message. We'll get back to you with a free quote, usually the same day.</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg width="18" height="18" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Business</div>
+          <span style="font-weight:600;font-size:15px;color:#0a0a0a;">Waigal Movers LLC</span>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg width="18" height="18" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Phone</div>
+          <a href="tel:+12674388854">(267) 438-8854</a>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg width="18" height="18" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Email</div>
+          <a href="mailto:booking@waigalmovers.com">booking@waigalmovers.com</a>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg width="18" height="18" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Location</div>
+          <span style="font-weight:600;font-size:15px;color:#0a0a0a;">Charlottesville, Virginia</span>
+        </div>
+      </div>
+
+      <a href="tel:+12674388854" class="call-btn-large">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call (267) 438-8854
+      </a>
+    </div>
+
+    <div class="contact-form" id="quoteForm">
+      <h3>Get a Free Quote</h3>
+      <div id="formFields">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="fname" placeholder="Azal Suri" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="fphone" placeholder="(555) 000-0000" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select id="fservice">
+            <option value="">Select a service…</option>
+            <option>House Moving</option>
+            <option>Loading & Unloading</option>
+            <option>Furniture Moving</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Moving From (Address)</label>
+          <input type="text" id="ffrom" placeholder="123 Main St, Charlottesville, VA" autocomplete="street-address">
+        </div>
+        <div class="form-group">
+          <label>Moving To (Address)</label>
+          <input type="text" id="fto" placeholder="456 Elm Ave, Richmond, VA" autocomplete="street-address">
+        </div>
+        <div class="form-group">
+          <label>Home Size</label>
+          <select id="fsize">
+            <option value="">Select size…</option>
+            <option>Studio</option>
+            <option>1 Bedroom</option>
+            <option>2 Bedroom</option>
+            <option>3 Bedroom</option>
+            <option>4+ Bedroom</option>
+            <option>Office / Commercial</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Stairs or Elevator?</label>
+          <select id="faccess">
+            <option value="">Select access type…</option>
+            <option>Ground floor (no stairs)</option>
+            <option>Stairs only</option>
+            <option>Elevator available</option>
+            <option>Both locations have stairs</option>
+            <option>Mixed (different at each location)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Special / Heavy Items</label>
+          <input type="text" id="fspecial" placeholder="Piano, safe, pool table, large appliances…">
+        </div>
+        <div class="form-group">
+          <label>Need Packing Help?</label>
+          <select id="fpacking">
+            <option value="">Select an option…</option>
+            <option>No, I'll pack everything myself</option>
+            <option>Yes, full packing service</option>
+            <option>Partial (fragile and special items only)</option>
+            <option>Need packing supplies (boxes, tape, wrap)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Move Date (approx.)</label>
+          <input type="date" id="fdate">
+        </div>
+        <div class="form-group">
+          <label>Additional Details</label>
+          <textarea id="fmessage" placeholder="Anything else we should know?"></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Send My Quote Request →</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <h4>Message Sent!</h4>
+        <p>Thanks! We'll reach out within a few minutes. For urgent help, call us directly.</p>
+        <a href="tel:+12674388854" class="call-btn-large" style="margin-top:20px;">📞 (267) 438-8854</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo-wrap">
+    <img src="logo.png" alt="Waigal Movers">
+  </div>
+  <div class="logo-pill" style="display:none;"></div> <p>
+    📞 <a href="tel:+12674388854">(267) 438-8854</a> &nbsp;·&nbsp;
+    ✉️ <a href="mailto:booking@waigalmovers.com">booking@waigalmovers.com</a>
+  </p>
+  <p style="margin-top:10px;">Charlottesville, Virginia</p>
+
+  <div class="social-icons">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+  </div>
+
+  <p style="margin-top:14px;color:#444;">© 2026 Waigal Movers LLC. All rights reserved.</p>
+</footer>
+
+<div class="mobile-cta">
+  <a href="tel:+12674388854" class="mobile-call">
+    <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+  <a href="#contact" class="mobile-quote">
+    <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    Get Quote
+  </a>
+</div>
+
+<script>
+  function submitForm() {
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    if (!name || !phone) {
+      alert('Please enter your name and phone number so we can reach you.');
+      return;
+    }
+
+    // Disable button while sending
+    const btn = document.querySelector('.form-submit');
+    const originalText = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    // Gather all form data
+    const formData = new FormData();
+    formData.append('name',    name);
+    formData.append('phone',   phone);
+    formData.append('service', document.getElementById('fservice').value);
+    formData.append('from',    document.getElementById('ffrom').value);
+    formData.append('to',      document.getElementById('fto').value);
+    formData.append('size',    document.getElementById('fsize').value);
+    formData.append('access',  document.getElementById('faccess').value);
+    formData.append('special', document.getElementById('fspecial').value);
+    formData.append('packing', document.getElementById('fpacking').value);
+    formData.append('date',    document.getElementById('fdate').value);
+    formData.append('message', document.getElementById('fmessage').value);
+
+    // Formatting hints for FormSubmit's email
+    formData.append('_subject', 'New Quote Request - Waigal Movers Website');
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+
+    // Send to FormSubmit (free, no backend/server needed - works on static hosting)
+    fetch('https://formsubmit.co/ajax/iamnazirmusawer@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data && (data.success === 'true' || data.success === true)) {
+        document.getElementById('formFields').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        alert('Sorry, there was an issue sending your request. Please call us directly at (267) 438-8854.');
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    })
+    .catch(err => {
+      alert('Sorry, there was a connection issue. Please call us directly at (267) 438-8854.');
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.service-card, .why-card, .contact-detail').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
